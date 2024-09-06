@@ -1,0 +1,11 @@
+services:
+  spark:
+    image: jupyter/pyspark-notebook
+    ports:
+      - "12345:8888"
+      - "4040:4040"
+    volumes:
+      - ./work:/home/jovyan/work
+    environment:
+      - SPARK_OPTS=--conf spark.ui.port=4040
+      - JUPYTER_TOKEN=pysparkjupyterdlawork9888
